@@ -1,6 +1,6 @@
 /* Login.module.css */
 
-:local {
+:root {
   --primary-color: #4f46e5;
   --primary-hover: #4338ca;
   --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
