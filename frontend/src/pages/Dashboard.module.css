@@ -1,0 +1,620 @@
+/* ==========================================================================
+   Base Layout & Workspace Frame
+   ========================================================================== */
+
+.dashboardContainer {
+  display: flex !important;
+  min-height: 100vh !important;
+  width: 100% !important;
+  background-color: #f8fafc !important;
+  color: #1e293b !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+}
+
+/* Sidebar Navigation Layer */
+.sidebar {
+  width: 260px !important;
+  min-width: 260px !important;
+  background-color: #0f172a !important;
+  color: #ffffff !important;
+  display: flex !important;
+  flex-direction: column !important;
+  padding: 32px 24px !important;
+  position: fixed !important;
+  height: 100vh !important;
+  left: 0 !important;
+  top: 0 !important;
+  z-index: 100 !important;
+  box-sizing: border-box !important;
+}
+
+.logoArea h2 {
+  font-size: 1.6rem !important;
+  font-weight: 800 !important;
+  color: #ffffff !important;
+  margin: 0 0 40px 0 !important;
+  letter-spacing: -0.5px !important;
+}
+
+.navLinks {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 8px !important;
+  flex: 1 !important;
+}
+
+.navLinkBtn {
+  background: transparent !important;
+  border: none !important;
+  color: #94a3b8 !important;
+  text-align: left !important;
+  padding: 12px 16px !important;
+  border-radius: 8px !important;
+  font-size: 1rem !important;
+  font-weight: 500 !important;
+  cursor: pointer !important;
+  width: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+.activeLink {
+  color: #ffffff !important;
+  background-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+.navIcon {
+  margin-right: 12px !important;
+}
+
+.logoutBtn {
+  background: rgba(239, 68, 68, 0.05) !important;
+  border: 1px solid rgba(239, 68, 68, 0.2) !important;
+  color: #f87171 !important;
+  padding: 12px !important;
+  border-radius: 8px !important;
+  cursor: pointer !important;
+  font-size: 0.95rem !important;
+  font-weight: 600 !important;
+  width: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: all 0.2s ease !important;
+}
+
+.logoutBtn:hover {
+  background: rgba(239, 68, 68, 0.15) !important;
+  color: #ef4444 !important;
+}
+
+/* Main Core Content Workspace */
+.mainContent {
+  flex: 1 !important;
+  margin-left: 260px !important;
+  padding: 40px !important;
+  box-sizing: border-box !important;
+  min-width: 0 !important;
+}
+
+.dashboardHeader {
+  margin-bottom: 32px !important;
+}
+
+.dashboardHeader h1 {
+  font-size: 2rem !important;
+  font-weight: 700 !important;
+  margin: 0 0 6px 0 !important;
+}
+
+.subtitle {
+  color: #64748b !important;
+  font-size: 0.95rem !important;
+}
+
+.workspaceLayout {
+  display: flex !important;
+  gap: 32px !important;
+  align-items: flex-start !important;
+}
+
+/* ==========================================================================
+       Form Panel Component Layout
+       ========================================================================== */
+
+.formPanel {
+  flex: 1 !important;
+  min-width: 300px !important;
+}
+
+.stickyFormWrapper {
+  position: sticky !important;
+  top: 40px !important;
+  background: #ffffff !important;
+  padding: 24px !important;
+  border-radius: 12px !important;
+  border: 1px solid #e2e8f0 !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02) !important;
+}
+
+.stickyFormWrapper h3 {
+  margin-top: 0 !important;
+  margin-bottom: 20px !important;
+  font-size: 1.2rem !important;
+  color: #0f172a !important;
+}
+
+.taskForm {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 16px !important;
+}
+
+.inputGroup {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 6px !important;
+}
+
+.inputGroup label {
+  font-size: 0.85rem !important;
+  font-weight: 600 !important;
+  color: #475569 !important;
+}
+
+.inputGroup input,
+.inputGroup textarea {
+  padding: 12px !important;
+  border: 1px solid #cbd5e1 !important;
+  border-radius: 8px !important;
+  font-size: 0.95rem !important;
+  outline: none !important;
+  transition: all 0.2s ease !important;
+  background: #ffffff !important;
+  color: #1e293b !important;
+}
+
+.inputGroup input:focus,
+.inputGroup textarea:focus {
+  border-color: #4f46e5 !important;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1) !important;
+}
+
+.submitBtn {
+  background: #4f46e5 !important;
+  color: #ffffff !important;
+  border: none !important;
+  padding: 12px !important;
+  border-radius: 8px !important;
+  font-weight: 600 !important;
+  font-size: 0.95rem !important;
+  cursor: pointer !important;
+  transition: background 0.2s ease !important;
+}
+
+.submitBtn:hover {
+  background: #4338ca !important;
+}
+
+/* ==========================================================================
+       Tasks Feed & Filter Bar Module
+       ========================================================================== */
+
+.tasksPanel {
+  flex: 2 !important;
+}
+
+.filterBar {
+  display: flex !important;
+  gap: 16px !important;
+  margin-bottom: 24px !important;
+  width: 100% !important;
+}
+
+.searchInput {
+  flex: 1 !important;
+  min-width: 0 !important;
+  padding: 12px 16px !important;
+  border: 1px solid #cbd5e1 !important;
+  border-radius: 8px !important;
+  font-size: 0.95rem !important;
+  outline: none !important;
+  transition: all 0.2s ease !important;
+  background: #ffffff !important;
+}
+
+.searchInput:focus {
+  border-color: #4f46e5 !important;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1) !important;
+}
+
+.filterSelect {
+  width: 160px !important;
+  padding: 12px !important;
+  border: 1px solid #cbd5e1 !important;
+  border-radius: 8px !important;
+  font-size: 0.95rem !important;
+  font-weight: 500 !important;
+  background-color: #ffffff !important;
+  cursor: pointer !important;
+  outline: none !important;
+}
+
+.filterSelect:focus {
+  border-color: #4f46e5 !important;
+}
+
+.tasksGrid {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 16px !important;
+}
+
+/* ==========================================================================
+       Minimalist Premium Task Card Layout Architecture
+       ========================================================================== */
+
+.taskCard {
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 12px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  position: relative !important;
+  overflow: hidden !important;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.02) !important;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* Premium Left Accent Indicators mapped by status values natively */
+.taskCard:has(.statusCompleted) {
+  border-left: 4px solid #10b981 !important;
+}
+.taskCard:has(.statusProgress) {
+  border-left: 4px solid #3b82f6 !important;
+}
+.taskCard:has(.statusPending) {
+  border-left: 4px solid #f59e0b !important;
+}
+
+.taskCard:hover {
+  transform: translateY(-2px) !important;
+  border-color: #cbd5e1 !important;
+  box-shadow: 0 12px 20px -8px rgba(15, 23, 42, 0.08) !important;
+}
+
+/* Inline Form Editing Mode Card Adjustments */
+.cardEditing {
+  border-left: 4px solid #4f46e5 !important;
+  background: #f8fafc !important;
+  padding: 20px !important;
+}
+
+.editActionsRow {
+  display: flex !important;
+  gap: 10px !important;
+  margin-top: 4px !important;
+}
+
+.cancelBtn {
+  background: #ffffff !important;
+  border: 1px solid #cbd5e1 !important;
+  color: #475569 !important;
+  padding: 10px 16px !important;
+  border-radius: 8px !important;
+  font-weight: 600 !important;
+  font-size: 0.9rem !important;
+  cursor: pointer !important;
+  transition: background 0.15s ease !important;
+}
+.cancelBtn:hover {
+  background: #f1f5f9 !important;
+}
+
+/* Upper Content Layout Body block */
+.cardMainBody {
+  padding: 20px 20px 16px 20px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  flex-grow: 1 !important;
+  gap: 12px !important;
+}
+
+.taskCardHeader {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: flex-start !important;
+  gap: 16px !important;
+}
+
+.taskCardHeader h4 {
+  font-size: 1.15rem !important;
+  font-weight: 600 !important;
+  color: #0f172a !important;
+  margin: 0 !important;
+  line-height: 1.4 !important;
+}
+
+.taskDescription {
+  color: #475569 !important;
+  font-size: 0.92rem !important;
+  line-height: 1.5 !important;
+  margin: 0 !important;
+}
+
+.noDesc {
+  color: #94a3b8 !important;
+  font-style: italic !important;
+}
+
+.taskMeta {
+  display: flex !important;
+  margin-top: auto !important; /* Forces layout metadata to the bottom of the content area */
+}
+
+.metaId {
+  font-size: 0.72rem !important;
+  font-family: monospace !important;
+  color: #64748b !important;
+  background: #f1f5f9 !important;
+  padding: 2px 6px !important;
+  border-radius: 4px !important;
+  font-weight: 500 !important;
+}
+
+/* ==========================================================================
+       Sleek Segmented Ribbon Action Bar Toolbar
+       ========================================================================== */
+
+.iconActionsGroup {
+  display: flex !important;
+  width: 100% !important;
+  background: #f8fafc !important;
+  border-top: 1px solid #e2e8f0 !important;
+  gap: 0 !important; /* Removes margins so button elements blend together cleanly */
+}
+
+.iconActionBtn {
+  flex: 1 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 6px !important;
+  background: transparent !important;
+  border: none !important;
+  padding: 10px 8px !important;
+  font-size: 0.82rem !important;
+  font-weight: 600 !important;
+  color: #475569 !important;
+  cursor: pointer !important;
+  border-radius: 0 !important;
+  transition: all 0.15s ease !important;
+}
+
+/* Adds high-end vertical partition divider borders between action items */
+.iconActionBtn:not(:last-child) {
+  border-right: 1px solid #e2e8f0 !important;
+}
+
+.iconActionBtn:hover {
+  background: #f1f5f9 !important;
+  color: #0f172a !important;
+}
+
+.deleteAction {
+  color: #64748b !important;
+}
+.deleteAction:hover {
+  background: #fee2e2 !important;
+  color: #ef4444 !important;
+}
+
+/* Soft Pastels Micro-Badge Stylesheet Overhaul */
+.statusBadge {
+  font-size: 0.7rem !important;
+  font-weight: 700 !important;
+  padding: 3px 8px !important;
+  border-radius: 6px !important;
+  text-transform: uppercase !important;
+  white-space: nowrap !important;
+  letter-spacing: 0.5px !important;
+}
+
+.statusCompleted {
+  background-color: #ecfdf5 !important;
+  color: #065f46 !important;
+}
+.statusProgress {
+  background-color: #eff6ff !important;
+  color: #1e40af !important;
+}
+.statusPending {
+  background-color: #fffbeb !important;
+  color: #92400e !important;
+}
+
+/* ==========================================================================
+       Pagination System Elements
+       ========================================================================== */
+
+.pagination {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 16px !important;
+  margin-top: 32px !important;
+  padding-top: 16px !important;
+  border-top: 1px dashed #e2e8f0 !important;
+  width: 100% !important;
+}
+
+.pageBtn {
+  padding: 10px 18px !important;
+  font-size: 0.9rem !important;
+  font-weight: 600 !important;
+  border-radius: 8px !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+  background: #ffffff !important;
+  border: 1px solid #cbd5e1 !important;
+  color: #334155 !important;
+}
+
+.pageBtn:hover:not(:disabled) {
+  background: #f1f5f9 !important;
+  border-color: #cbd5e1 !important;
+}
+
+.pageBtn:disabled {
+  opacity: 0.4 !important;
+  cursor: not-allowed !important;
+  background: #f1f5f9 !important;
+  border-color: #e2e8f0 !important;
+}
+
+.pageInfo {
+  font-size: 0.9rem !important;
+  font-weight: 600 !important;
+  color: #475569 !important;
+  white-space: nowrap !important;
+}
+
+/* ==========================================================================
+       Data Loading & Empty Pipeline Placeholders
+       ========================================================================== */
+
+.loaderContainer {
+  text-align: center !important;
+  padding: 40px !important;
+}
+.spinner {
+  width: 32px !important;
+  height: 32px !important;
+  border: 3px solid #cbd5e1 !important;
+  border-top-color: #4f46e5 !important;
+  border-radius: 50% !important;
+  animation: spin 0.8s linear infinite !important;
+  margin: 0 auto 16px auto !important;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.emptyState {
+  text-align: center !important;
+  padding: 64px 24px !important;
+  background: #ffffff !important;
+  border-radius: 12px !important;
+  border: 2px dashed #cbd5e1 !important;
+}
+.emptyIcon {
+  font-size: 3rem !important;
+  margin-bottom: 12px !important;
+}
+.emptyState h3 {
+  margin: 0 0 6px 0 !important;
+  font-size: 1.25rem !important;
+}
+.emptyState p {
+  color: #64748b !important;
+  margin: 0 !important;
+}
+
+/* ==========================================================================
+       Fluid Framework Responsive Engine
+       ========================================================================== */
+
+@media (max-width: 992px) {
+  .dashboardContainer {
+    flex-direction: column !important;
+  }
+  .sidebar {
+    position: relative !important;
+    width: 100% !important;
+    height: auto !important;
+    padding: 16px 24px !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+  }
+  .logoArea h2 {
+    margin: 0 !important;
+  }
+  .navLinks {
+    display: none !important;
+  }
+  .logoutBtn {
+    width: auto !important;
+  }
+  .mainContent {
+    margin-left: 0 !important;
+    padding: 28px 24px !important;
+  }
+  .workspaceLayout {
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 24px !important;
+  }
+  .formPanel,
+  .tasksPanel {
+    width: 100% !important;
+  }
+  .stickyFormWrapper {
+    position: relative !important;
+    top: 0 !important;
+    padding: 20px !important;
+  }
+  .filterBar {
+    gap: 12px !important;
+  }
+  .filterSelect {
+    width: 150px !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .mainContent {
+    padding: 16px 12px !important;
+  }
+  .filterBar {
+    flex-direction: column !important;
+    gap: 10px !important;
+  }
+  .filterSelect {
+    width: 100% !important;
+  }
+
+  /* Layout adapts dynamically to keep card heights snug and safe */
+  .cardMainBody {
+    padding: 16px 16px 12px 16px !important;
+    gap: 8px !important;
+  }
+  .taskCardHeader h4 {
+    font-size: 1.05rem !important;
+  }
+  .iconActionBtn {
+    height: 44px !important;
+    font-size: 0.8rem !important;
+  }
+
+  .pagination {
+    flex-wrap: wrap !important;
+    gap: 12px !important;
+  }
+  .pageBtn {
+    flex: 1 !important;
+    min-width: 110px !important;
+    text-align: center !important;
+    padding: 12px !important;
+  }
+  .pageInfo {
+    width: 100% !important;
+    text-align: center !important;
+    order: -1 !important;
+    margin-bottom: 4px !important;
+  }
+}
