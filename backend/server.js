@@ -15,7 +15,7 @@ connectDB();
 const app = express();
 
 //app.use(cors());
-const cors = require("cors");
+
 app.use(
   cors({
     origin: ["https://taskly-dusky-tau.vercel.app", "http://localhost:5173"], // Add your Vercel production link
