@@ -10,7 +10,6 @@ function ProtectedRoute({ children }) {
     const verifyUser = async () => {
       try {
         await API.get("/auth/me");
-
         setAuthenticated(true);
       } catch (error) {
         setAuthenticated(false);
@@ -25,6 +24,7 @@ function ProtectedRoute({ children }) {
   if (loading) {
     return <h2>Loading...</h2>;
   }
+  console.log("Authenticated:", authenticated);
 
   return authenticated ? children : <Navigate to="/" replace />;
 }

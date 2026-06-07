@@ -97,10 +97,12 @@ const loginUser = async (req, res) => {
     //     email: user.email,
     //   },
     // });
+    const isProduction = String(process.env.NODE_ENV) === "production";
+
     res.cookie("token", generateToken(user._id), {
       httpOnly: true,
-      secure: false,
-      sameSite: "lax",
+      secure: isProduction, // Must be true for HTTPS (Render)
+      sameSite: isProduction ? "none" : "lax", // Must be "none" to cross domains to localhost
       maxAge: 7 * 24 * 60 * 60 * 1000,
     });
 
@@ -121,14 +123,16 @@ const loginUser = async (req, res) => {
 };
 // in case of cookie based authentication , we need to have a logout route , we just can not remove the token from the client side , we need to clear the cookie from the server side as well
 const logoutUser = (req, res) => {
+  const isProduction = String(process.env.NODE_ENV) === "production";
+
   res.cookie("token", "", {
     httpOnly: true,
-    expires: new Date(0),
+    secure: isProduction,
+    sameSite: isProduction ? "none" : "lax",
+    expires: new Date(0), // Clears the cookie immediately
   });
 
-  res.status(200).json({
-    message: "Logged out",
-  });
+  res.status(200).json({ message: "Logged out" });
 };
 
 const getMe = async (req, res) => {

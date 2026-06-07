@@ -16,9 +16,29 @@ const app = express();
 
 //app.use(cors());
 
+// app.use(
+//   cors({
+//     origin: ["https://taskly-dusky-tau.vercel.app", "http://localhost:5173"], // Add your Vercel production link
+//     credentials: true,
+//   }),
+// );
+const allowedOrigins = [
+  "https://taskly-dusky-tau.vercel.app", // Your Vercel frontend
+  "http://localhost:5173", // Your Local frontend
+];
+
 app.use(
   cors({
-    origin: ["https://taskly-dusky-tau.vercel.app", "http://localhost:5173"], // Add your Vercel production link
+    origin: function (origin, callback) {
+      // Allow requests with no origin (like mobile apps or curl requests)
+      if (!origin) return callback(null, true);
+
+      if (allowedOrigins.indexOf(origin) !== -1) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
     credentials: true,
   }),
 );
