@@ -227,31 +227,7 @@ DELETE /api/tasks/:id
 PATCH /api/tasks/:id/status
 ```
 
----
 
-## Screenshots
-
-### Login Page
-
-(Add Screenshot Here)
-
-### Register Page
-
-(Add Screenshot Here)
-
-### Dashboard
-
-(Add Screenshot Here)
-
-### Search & Filter
-
-(Add Screenshot Here)
-
-### Pagination
-
-(Add Screenshot Here)
-
----
 
 ## Future Improvements
 
